@@ -25,13 +25,13 @@ In node information file:
 
 * `cluster index`: The cluster index for the node
 * `parent mass`: The parent pass for the node
-* 
+
 In edge information file:
 
 * `CLUSTERID1`: The cluster index for the first node in an edge
 * `CLUSTERID2`: The cluster index for the second node in an edge
 
-#### knowledgebases of microbial enzymes
+#### Knowledgebases of microbial enzymes
 The knowledgebases of microbial enzymes is created using [BioTransformer](https://bitbucket.org/djoumbou/biotransformerjar/src/master/). The input for the software will be a chemical structure database for molecules and the software will search these structures against the biotransformation database. The output will be the possible biotransformation and pontetional products for each input molecule structure. Notice that the BioTransformer will generate one output file for each input structure so we encourange you to combine these output file to one file containing all the information and add the column `origin_molecule` to record the input molecule structure name.  
 
 One valid summarized biotransformation result file with at least following columns is required for the intergration process:
