@@ -1,0 +1,14 @@
+mbx_name	mgx_name	p_value	correlation	samples1	samples2	samples_shared	odd_ratio	direction
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Bacteroidetes;_c__Bacteroidia;_o__Bacteroidales;_f__Bacteroidaceae;_g__Bacteroides;_s__;2_2949328	2.88558885152737e-08	-0.128344473009319	2092	921	910	1.5397631133671743	positive
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Proteobacteria;_c__Gammaproteobacteria;_o__Enterobacteriales;_f__Enterobacteriaceae;_g__;_s__;2_1028632	1.29223960635844e-07	-0.12827323110630498	2092	1224	1209	1.6430351075877687	positive
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Actinobacteria;_c__Actinobacteria;_o__Bifidobacteriales;_f__Bifidobacteriaceae;_g__Bifidobacterium;_s__;2_825808	3.61031748625029e-07	0.11341612540866	2092	813	798	0.740030911901082	negative
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Ruminococcaceae;_g__;_s__;10_1885089	6.5613880801428e-05	0.0812269306848973	2092	766	754	0.9861733931240658	negative
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Lachnospiraceae;_g__Coprococcus;_s__;3_174019	5.3013062331829596e-06	0.0787346621158787	2092	915	897	0.6255230125523014	negative
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Ruminococcaceae;_g__;_s__;11_191148	2.46166721330671e-07	0.0982869966456854	2092	572	564	1.1534685863874345	positive
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Ruminococcaceae;_g__;_s__;31_300870	1.58700229540432e-06	-0.0692359359675755	2092	272	269	1.4755896873285792	positive
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Bacilli;_o__Bacillales;_f__Bacillaceae;_g__Bacillus;_s__foraminis;1_4469214	8.196799421312099e-05	-0.0793459558608589	2092	223	222	3.7989304812834224	positive
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Ruminococcaceae;_g__Faecalibacterium;_s__prausnitzii;3_185734	3.43595899458596e-06	-0.0944128542562966	2092	293	288	0.8940133037694012	negative
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Lachnospiraceae;_g__Roseburia;_s__faecis;2_4339831	7.30480194235018e-05	0.0355941219927549	2092	525	513	0.568556048131729	negative
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Lachnospiraceae;_g__;_s__;51_3924627	1.0408786034769199e-11	0.157730401145263	2092	1017	1000	0.8618832148243912	negative
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Lachnospiraceae;_g__Roseburia;_s__;7_2438203	4.1073218241312105e-06	0.10488125838852198	2092	848	833	0.7939634630659252	negative
+74.937 670 1 (ID: 5272)	k__Bacteria;_p__Firmicutes;_c__Clostridia;_o__Clostridiales;_f__Clostridiaceae;_g__;_s__;22_4454432	7.13920444728481e-06	-0.0867507768322502	2092	386	382	1.619590643274854	positive
