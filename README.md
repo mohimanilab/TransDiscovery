@@ -20,10 +20,14 @@ One vaild association result file is required with at least following columns fo
 Molecular network is constructed using global natural products social molecular networking ([GNPS](https://gnps.ucsd.edu/ProteoSAFe/static/gnps-splash.jsp)) infrastructure. First all the MS/MS spectra are clustered by MSCluster and identical spectra are merged into the same clusters and represented as nodes in the network. Then the nodes are matched pairwise using the modification tolerant spectral matching scheme. The output will be the identified nodes and edges between these nodes.
 
 Two valid molecular network result file containing at least following columns is required for the intergration process:
+
 In node information file:
+
 * `cluster index`: The cluster index for the node
 * `parent mass`: The parent pass for the node
+* 
 In edge information file:
+
 * `CLUSTERID1`: The cluster index for the first node in an edge
 * `CLUSTERID2`: The cluster index for the second node in an edge
 
