@@ -4,11 +4,15 @@ This workflow is designed to identify novel biotransformations by intergrating m
 ## Main Steps
 ### preparing input data
 #### Association network result
-Association network is constructed by calculating pairwise association test between molecular features and microbial features. The association result can be obtained using the pipeline from [AssociationNetworks](https://github.com/mohimanilab/AssociationNetworks/blob/master/README.md). It takes a metabolic feature matrix and a metagenomic feature matrix as input. The output will be the association between each molecular feature and microbial feature with the corresponding correlation value and p-value. 
+Association network is constructed by calculating pairwise association test between molecular features and microbial features using selected statistical test. The association result can be obtained using the pipeline from [AssociationNetworks](https://github.com/mohimanilab/AssociationNetworks/blob/master/README.md). It takes a metabolic feature matrix and a metagenomic feature matrix as input. The output will be the association between each molecular feature and microbial feature with the corresponding correlation and p-value. 
 
 One vaild association result file is required with following columns:
 * `mbx_name`: The name of metablic feature
 * `mgx_name`: The name of metagenomic feature
 * `correlation`: correlation of the association
 * `p_value`: p-value for the association
+
+
+#### Molecular network result
+Molecular network is constructed using global natural products social molecular networking ([GNPS](https://gnps.ucsd.edu/ProteoSAFe/static/gnps-splash.jsp)) infrastructure. First all the MS/MS spectra are clustered by MSCluster and identical spectra are merged into the same clusters and represented as nodes in the network. Then the nodes are matched pairwise using the modification tolerant spectral matching scheme. 
 
