@@ -55,9 +55,9 @@ def run(args):
                 if nx.has_path(G,substrate_item,product_item):
                     if len(nx.shortest_path(G, substrate_item, product_item))<=2:
                         this_path_2.append("-".join([str(s) for s in nx.shortest_path(G, substrate_item, product_item)]))
-                    if len(nx.shortest_path(G, substrate_item, product_item))<=4:
+                    if len(nx.shortest_path(G, substrate_item, product_item))==4:
                         this_path_4.append("-".join([str(s) for s in nx.shortest_path(G, substrate_item, product_item)]))
-                    if len(nx.shortest_path(G, substrate_item, product_item))<=3:
+                    if len(nx.shortest_path(G, substrate_item, product_item))==3:
                         this_path_3.append("-".join([str(s) for s in nx.shortest_path(G, substrate_item, product_item)]))
         if len(this_path_2)!=0:
             result.loc[i,"molecular_path_2"] = "#".join(this_path_2)
