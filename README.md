@@ -90,9 +90,9 @@ The input parameters are:
 
 
 The output file is a TAB-separated table with the first line being the header and every consecutive line describing a validated biotransformation. Compare to step1 following columns are added:
-* `--molecular_path_2`: Any path composed with less than/equal to 2 edges from substrate molecular feature to product molecular feature in molecular network
-* `--molecular_path_3`: Any path composed with 3 edges from substrate molecular feature to product molecular feature in molecular network
-* `--molecular_path_4`: Any path composed with 4 edges from substrate molecular feature to product molecular feature in molecular network
+* `molecular_path_2`: Any path composed with less than/equal to 2 edges from substrate molecular feature to product molecular feature in molecular network
+* `molecular_path_3`: Any path composed with 3 edges from substrate molecular feature to product molecular feature in molecular network
+* `molecular_path_4`: Any path composed with 4 edges from substrate molecular feature to product molecular feature in molecular network
 
 
 ## Authors
