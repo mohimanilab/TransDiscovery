@@ -7,7 +7,6 @@ import pandas
 import numpy as np
 import networkx as nx
 def run(args):
-
     biotransformer_result = args.Association_BioTransformer_merged_result
     network_pair = args.Molecular_network_edge
     network_node_info = args.Molecular_network_node
@@ -18,7 +17,7 @@ def run(args):
     biotransformer_result_info["molecular_path_2"] = "NA"
     biotransformer_result_info["molecular_path_3"] = "NA"
     biotransformer_result_info["molecular_path_4"] = "NA"
-
+    print("Creating molecular network")
     result = biotransformer_result_info
     G = nx.Graph()
     file = open(network_pair,"r")
@@ -38,7 +37,7 @@ def run(args):
     m =G.number_of_edges()
 
     tolerance = args.tolerance
-
+    print("Start matching process")
     for i in range(len(biotransformer_result_info)):
         print(i)
         this_path_2 = []

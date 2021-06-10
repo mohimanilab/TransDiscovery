@@ -9,7 +9,7 @@ import pandas
 import os
 pandas.options.mode.chained_assignment = None  # default='warn'
 def run(args):
-
+    print("loading BioTransformer_result")
     folder_path = args.BioTransformer_result_path
     file_list = os.listdir(folder_path)
     for file in file_list:
@@ -24,8 +24,8 @@ def run(args):
     association_info = pandas.read_table(association_path,sep = "\t")
 
     result = association_info
-    #association_info.columns
 
+    print("Start Matching")
 
     total_col = result.shape[0]
     tolerance = args.tolerance
@@ -64,6 +64,11 @@ def run(args):
                     continue
                 if numpy.abs(data["correlation"])<args.product_rho_value_cutoff:
                     continue
+                if args.neg_sub_pos_prod_only:
+                    if data["correlation"]<0:
+                        continue
+                    if substrate_data["correlation"]>0:
+                        continue
                 substrate_list.append(substrate_data["mbx_name"])
                 enzyme_list.append(substrate_data["mgx_name"])
                 product_list.append(data["mbx_name"])
@@ -120,6 +125,9 @@ if __name__ == "__main__":
     parser.add_argument("--product_rho_value_cutoff",
                         help="The rho cutoff for valid association between product and enzyme",
                         default=0)
+    parser.add_argument("--neg_sub_pos_prod_only",
+                        help="True if only consider negative correlation for substrate and positive correlation for product",
+                        default=False)
 
     parser.add_argument("--output_path",
                         help="The path to the output file",
