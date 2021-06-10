@@ -3,7 +3,7 @@
 This workflow is designed to identify novel biotransformations by intergrating molecular networks (connecting related molecules with similar mass spectra), association networks (connecting co-occurring molecules and microbes) and knowledgebases of microbial enzymes. The identification process is based on the hypothesis that whenever a microbial enzyme biotransforms a substrate molecule to a product, we observe (i) a strong positive correlation between the enzyme/strain and the product, (ii) a strong negative correlation between the enzyme/strain and the substrate, and (iii) an edge in the molecular network between the substrate and the product.
 ## Main Steps
 ### preparing input data
-The following data is required to successfully run TransDiscovery Pipeline
+The following data is required to successfully run TransDiscovery
 #### Association network result
 Association network is constructed by calculating pairwise association test between molecular features and microbial features using selected statistical test. The association result can be obtained using the pipeline from [AssociationNetworks](https://github.com/mohimanilab/AssociationNetworks/blob/master/README.md). It takes a metabolic feature matrix and a metagenomic feature matrix as input. The output will be the association between each molecular feature and microbial feature with the corresponding correlation and p-value. 
 
@@ -44,9 +44,13 @@ One valid summarized biotransformation result file with at least following colum
 
 ### TransDiscovery pipeline
 The TransDiscovery pipeline contains two major step:
-####Intergrating Association network with BioTransformer result
-This step is designed 
+#### Intergrating Association network with BioTransformer result
+This step is designed to identify candidate biotransformations by matching the association network with BioTransformer results. In this step the input files will be the generated association network and the BioTransformer predicted substrate-product molecules pairs. If (i) a strong positive correlation exist between the enzyme/strain and the identified product, (ii) a strong negative correlation exist between the enzyme/strain and the identified substrate, then the software will output the substrate, product and enzyme/strain as candidate biotransformation. 
 
+The input parameters are:
+
+* `CLUSTERID1`: The cluster index for the first node in an edge
+* `CLUSTERID2`: The cluster index for the second node in an edge
 
 
 
