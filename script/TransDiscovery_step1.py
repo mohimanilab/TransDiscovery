@@ -109,11 +109,11 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Build results.')
     parser.add_argument("--BioTransformer_result_path",
-                        help="the path to the BioTransformer result folder",
+                        help="The path to the BioTransformer result folder",
                         default=None)
     
     parser.add_argument("--Association_result_path",
-                        help="the path to the Association network result file",
+                        help="The path to the Association network result file",
                         default=None)
 
     parser.add_argument("--tolerance",
