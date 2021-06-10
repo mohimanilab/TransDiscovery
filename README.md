@@ -49,8 +49,15 @@ This step is designed to identify candidate biotransformations by matching the a
 
 The input parameters are:
 
-* `CLUSTERID1`: The cluster index for the first node in an edge
-* `CLUSTERID2`: The cluster index for the second node in an edge
+* `--BioTransformer_result_path`: The path to the BioTransformer result folder
+* `--Association_result_path`: The path to the Association network result file
+* `--tolerance`: The mass tolerance when matching molecular features
+* `--substrate_rho_value_cutoff`: The rho correlation cutoff for valid association between substrate and enzyme
+* `--product_rho_value_cutoff`: The rho correlation cutoff for valid association between product and enzyme
+* `--neg_sub_pos_prod_only`: True if only consider negative correlation for substrate and positive correlation for product
+* `--output_path`: The path to the output file
+
+
 
 
 
