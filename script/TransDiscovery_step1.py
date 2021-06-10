@@ -32,8 +32,6 @@ def run(args):
     substrate_list = []
     enzyme_list = []
     product_list = []
-    substrate_direction_list = []
-    product_direction_list = []
     substrate_correlation_list = []
     product_correlation_list = []
     p_value_substrate_list = []
@@ -72,8 +70,6 @@ def run(args):
                 substrate_list.append(substrate_data["mbx_name"])
                 enzyme_list.append(substrate_data["mgx_name"])
                 product_list.append(data["mbx_name"])
-                substrate_direction_list.append(substrate_data["direction"])
-                product_direction_list.append(data["direction"])
                 substrate_correlation_list.append(substrate_data["correlation"])
                 product_correlation_list.append(data["correlation"])
                 p_value_substrate_list.append(substrate_data["p_value"])
@@ -89,8 +85,6 @@ def run(args):
                 {'substrate': substrate_list,
                  'enzyme': enzyme_list,
                  'product': product_list,
-                 'substrate_direction': substrate_direction_list,        
-                 'product_direction': product_direction_list,
                  'substrate_correlation':substrate_correlation_list,
                  'product_correlation' : product_correlation_list,
                  'p_value_substrate': p_value_substrate_list,
@@ -101,7 +95,7 @@ def run(args):
                  'enzyme_ID': enzyme_ID_list
 
                  })
-    result_df = result_df[[ 'substrate', 'enzyme','product','substrate_direction', 'product_direction','substrate_correlation','product_correlation', 'p_value_substrate', 'p_value_product','substrate_name','product_name','reaction_name','enzyme_ID']]
+    result_df = result_df[[ 'substrate', 'enzyme','product','substrate_correlation','product_correlation', 'p_value_substrate', 'p_value_product','substrate_name','product_name','reaction_name','enzyme_ID']]
     result_df.to_csv(args.output_path,sep = "\t",index = False)
 
 
