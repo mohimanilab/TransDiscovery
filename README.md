@@ -60,8 +60,8 @@ This step is designed to validate candidate biotransformations identified in the
 User can perform the TransDiscovery workflow with the following parameters:
 ```
 python TransDiscovery.py \
---BioTransformer_result_path sample_input/BioTransformer_sample_input.txt \
---Association_result_path sample_input/ssociationNetwork_sample_input.txt \
+--BioTransformer_result_path sample_input/BioTransformer_sample_input/ \
+--Association_result_path sample_input/AssociationNetwork_sample_input.txt \
 --Molecular_network_edge_path sample_input/MolecularNetwork_edge_sample_input.txt \
 --Molecular_network_node_path sample_input/MolecularNetwork_node_sample_input.txt \
 --tolerance 0.02 \
