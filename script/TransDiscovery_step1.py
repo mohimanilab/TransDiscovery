@@ -3,6 +3,7 @@
 """
 @author: Donghui
 """
+import sys
 
 import numpy
 import pandas
@@ -14,7 +15,7 @@ def run(args):
     file_list = os.listdir(folder_path)
     for file in file_list:
         file_path = folder_path+file
-        biotrans_info = pandas.read_table(file_path,sep = ",")
+        biotrans_info = pandas.read_table(file_path,sep = "\t")
         biotrans_info["origin_molecule"] = file.split(".")[0]
         if file == file_list[0]:
             all_biotransformer = biotrans_info
@@ -28,7 +29,7 @@ def run(args):
     print("Start Matching")
 
     total_col = result.shape[0]
-    tolerance = args.tolerance
+    tolerance = float(args.tolerance)
     substrate_list = []
     enzyme_list = []
     product_list = []
@@ -58,9 +59,9 @@ def run(args):
             satisfied_match = all_association[(target_mass-tolerance<all_association["mass"]) & (all_association["mass"]<target_mass+tolerance)]
             for k in range(satisfied_match.shape[0]):
                 substrate_data = satisfied_match.iloc[k]
-                if numpy.abs(substrate_data["correlation"])<args.substrate_rho_value_cutoff:
+                if numpy.abs(substrate_data["correlation"])<float(args.substrate_rho_value_cutoff):
                     continue
-                if numpy.abs(data["correlation"])<args.product_rho_value_cutoff:
+                if numpy.abs(data["correlation"])<float(args.product_rho_value_cutoff):
                     continue
                 if args.neg_sub_pos_prod_only:
                     if data["correlation"]<0:
@@ -96,7 +97,9 @@ def run(args):
 
                  })
     result_df = result_df[[ 'substrate', 'enzyme','product','substrate_correlation','product_correlation', 'p_value_substrate', 'p_value_product','substrate_name','product_name','reaction_name','enzyme_ID']]
-    result_df.to_csv(args.output_path,sep = "\t",index = False)
+    if (len(result_df)==0):
+        sys.exit("no significant biotransformations find in step one.")
+    result_df.to_csv(args.Association_BioTransformer_merged_result,sep = "\t",index = False)
 
 
 if __name__ == "__main__":
@@ -123,9 +126,9 @@ if __name__ == "__main__":
                         help="True if only consider negative correlation for substrate and positive correlation for product",
                         default=False)
 
-    parser.add_argument("--output_path",
+    parser.add_argument("--Association_BioTransformer_merged_result",
                         help="The path to the output file",
-                        default=None)
+                        default='tmp/step_1.txt')
 
     args = parser.parse_args()
     

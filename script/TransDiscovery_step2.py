@@ -11,8 +11,8 @@ from timeit import default_timer as timer
 def run(args):
     print("loading molecular network info")
     biotransformer_result = args.Association_BioTransformer_merged_result
-    network_pair = args.Molecular_network_edge
-    network_node_info = args.Molecular_network_node
+    network_pair = args.Molecular_network_edge_path
+    network_node_info = args.Molecular_network_node_path
     biotransformer_result_info = pandas.read_table(biotransformer_result,sep = "\t")
     biotransformer_result_info["substrate_mass"] = biotransformer_result_info["substrate"].str.split(" ", n = 1, expand = True)[0].astype("float")
     biotransformer_result_info["product_mass"] = biotransformer_result_info["product"].str.split(" ", n = 1, expand = True)[0].astype("float")
@@ -25,8 +25,8 @@ def run(args):
     G = nx.Graph()
     file = open(network_pair,"r")
     node_list = []
+    next(file)
     for lines in file:
-        next(file)
         nodes = lines.split()[0:2]
         for item in nodes:
             item = int(item)
@@ -39,10 +39,9 @@ def run(args):
     n = G.number_of_nodes()
     m =G.number_of_edges()
 
-    tolerance = args.tolerance
+    tolerance = float(args.tolerance)
     print("Start merging molecular network with association network and BioTransformer knowledgebase")
     for i in range(len(biotransformer_result_info)):
-        print(i)
         this_path_2 = []
         this_path_3 = []
         this_path_4 = []
