@@ -53,8 +53,26 @@ One valid summarized biotransformation result file with at least following colum
 The TransDiscovery pipeline contains two major step:
 ### Intergrating Association network with BioTransformer result
 This step is designed to identify candidate biotransformations by matching the association network with BioTransformer results. In this step the input files will be the generated association network and the BioTransformer predicted substrate-product molecules pairs. If (i) a strong positive correlation exist between the enzyme/strain and the identified product, (ii) a strong negative correlation exist between the enzyme/strain and the identified substrate, then the software will output the substrate, product and enzyme/strain as candidate biotransformation. 
+### Validating candidate biotransformations using molecular network
+This step is designed to validate candidate biotransformations identified in the previous step. In this step the input files will be the candidate biotransformations obtained in the previous step and molecular network node/edge files generated from GNPS. If an edge/path in the molecular network between the substrate and the product exist, then the software will record such edge/path and consider this biotransformation as identified novel biotransformation. 
 
+## Running the workflow
 The input parameters are:
+
+'''
+python BADGERS.py \
+--model_db_path UK_biobank_Round2/weight_db \
+--covariance UK_biobank_Round2/cov \
+--gwas_path UK_biobank_Round2/GWAS.txt \
+--snp_column MarkerName \
+--effect_allele_column Allele1 \
+--non_effect_allele_column Allele2 \
+--pvalue_column P.value \
+--beta_column Effect \
+--output_file output.csv \
+--db_name 1738_traits.csv 
+
+'''
 
 * `--BioTransformer_result_path`: The path to the BioTransformer result folder
 * `--Association_result_path`: The path to the Association network result file
@@ -78,8 +96,7 @@ The output file is a TAB-separated table with the first line being the header an
 * `reaction_name`: The corresponding reaction name in BioTransformer result
 * `enzyme_ID`: The corresponding enzyme_ID of the enzyme in BioTransformer result
 
-### Validating candidate biotransformations using molecular network
-This step is designed to validate candidate biotransformations identified in the previous step. In this step the input files will be the candidate biotransformations obtained in the previous step and molecular network node/edge files generated from GNPS. If an edge/path in the molecular network between the substrate and the product exist, then the software will record such edge/path and consider this biotransformation as identified novel biotransformation. 
+
 
 The input parameters are:
 
