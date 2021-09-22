@@ -49,11 +49,11 @@ if __name__ == "__main__":
                         help="The path to the input file contain merged Association network and BioTransformer result",
                         default="/tmp/step_1.txt")
     
-    parser.add_argument("--Molecular_network_edge",
+    parser.add_argument("--Molecular_network_edge_path",
                         help="The path to the molecular netowrk edge info",
                         default=None)
 
-    parser.add_argument("--Molecular_network_node",
+    parser.add_argument("--Molecular_network_node_path",
                         help="The path to the molecular netowrk node info",
                         default=None)
     parser.add_argument("--output_path",
