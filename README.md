@@ -59,7 +59,7 @@ This step is designed to validate candidate biotransformations identified in the
 ## Running the workflow
 The input parameters are:
 ```
-python BADGERS.py \
+python TransDiscovery.py \
 --BioTransformer_result_path \
 --Association_result_path \
 --Molecular_network_edge_path \
