@@ -60,21 +60,22 @@ This step is designed to validate candidate biotransformations identified in the
 The input parameters are:
 ```
 python BADGERS.py \
---model_db_path UK_biobank_Round2/weight_db \
---covariance UK_biobank_Round2/cov \
---gwas_path UK_biobank_Round2/GWAS.txt \
---snp_column MarkerName \
---effect_allele_column Allele1 \
---non_effect_allele_column Allele2 \
---pvalue_column P.value \
---beta_column Effect \
---output_file output.csv \
---db_name 1738_traits.csv 
+--BioTransformer_result_path \
+--Association_result_path \
+--Molecular_network_edge_path \
+--Molecular_network_node_path \
+--tolerance \
+--substrate_rho_value_cutoff \
+--product_rho_value_cutoff \
+--neg_sub_pos_prod_only \
+--output_path output.csv
 ```
 
-
+Where: 
 * `--BioTransformer_result_path`: The path to the BioTransformer result folder
 * `--Association_result_path`: The path to the Association network result file
+* `--Molecular_network_edge`: The path to the molecular netowrk edge info
+* `--Molecular_network_node`: The path to the molecular netowrk node info
 * `--tolerance`: The mass tolerance when matching molecular features
 * `--substrate_rho_value_cutoff`: The rho value correlation cutoff for valid association between substrate and enzyme
 * `--product_rho_value_cutoff`: The rho value correlation cutoff for valid association between product and enzyme
@@ -94,23 +95,9 @@ The output file is a TAB-separated table with the first line being the header an
 * `product_name`: The corresponding molecule name of the product in BioTransformer result
 * `reaction_name`: The corresponding reaction name in BioTransformer result
 * `enzyme_ID`: The corresponding enzyme_ID of the enzyme in BioTransformer result
-
-
-
-The input parameters are:
-
-* `--Association_BioTransformer_merged_result`: The path to the input file contain merged Association network and BioTransformer result
-* `--Molecular_network_edge`: The path to the molecular netowrk edge info
-* `--Molecular_network_node`: The path to the molecular netowrk node info
-* `--tolerance`: The mass tolerance when matching molecular features
-* `--output_path`: The path to the output file
-
-
-The output file is a TAB-separated table with the first line being the header and every consecutive line describing a validated biotransformation. Compare to step1 following columns are added:
 * `molecular_path_2`: Any path composed with less than/equal to 2 edges from substrate molecular feature to product molecular feature in molecular network
 * `molecular_path_3`: Any path composed with 3 edges from substrate molecular feature to product molecular feature in molecular network
 * `molecular_path_4`: Any path composed with 4 edges from substrate molecular feature to product molecular feature in molecular network
-
 
 ## Authors
 Donghui Yan, Liu Cao, Hosein Mohimani
