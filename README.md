@@ -58,8 +58,7 @@ This step is designed to validate candidate biotransformations identified in the
 
 ## Running the workflow
 The input parameters are:
-
-'''
+```
 python BADGERS.py \
 --model_db_path UK_biobank_Round2/weight_db \
 --covariance UK_biobank_Round2/cov \
@@ -71,8 +70,8 @@ python BADGERS.py \
 --beta_column Effect \
 --output_file output.csv \
 --db_name 1738_traits.csv 
+```
 
-'''
 
 * `--BioTransformer_result_path`: The path to the BioTransformer result folder
 * `--Association_result_path`: The path to the Association network result file
