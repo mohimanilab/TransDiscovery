@@ -6,7 +6,10 @@
 import pandas
 import numpy as np
 import networkx as nx
+from timeit import default_timer as timer
+
 def run(args):
+    print("loading molecular network info")
     biotransformer_result = args.Association_BioTransformer_merged_result
     network_pair = args.Molecular_network_edge
     network_node_info = args.Molecular_network_node
@@ -37,7 +40,7 @@ def run(args):
     m =G.number_of_edges()
 
     tolerance = args.tolerance
-    print("Start matching process")
+    print("Start merging molecular network with association network and BioTransformer knowledgebase")
     for i in range(len(biotransformer_result_info)):
         print(i)
         this_path_2 = []
@@ -77,11 +80,11 @@ if __name__ == "__main__":
                         help="The path to the input file contain merged Association network and BioTransformer result",
                         default=None)
     
-    parser.add_argument("--Molecular_network_edge",
+    parser.add_argument("--Molecular_network_edge_path",
                         help="The path to the molecular netowrk edge info",
                         default=None)
 
-    parser.add_argument("--Molecular_network_node",
+    parser.add_argument("--Molecular_network_node_path",
                         help="The path to the molecular netowrk node info",
                         default=None)
     parser.add_argument("--tolerance",
