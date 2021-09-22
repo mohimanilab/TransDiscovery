@@ -60,14 +60,14 @@ This step is designed to validate candidate biotransformations identified in the
 The input parameters are:
 ```
 python TransDiscovery.py \
---BioTransformer_result_path \
---Association_result_path \
---Molecular_network_edge_path \
---Molecular_network_node_path \
---tolerance \
---substrate_rho_value_cutoff \
---product_rho_value_cutoff \
---neg_sub_pos_prod_only \
+--BioTransformer_result_path /sample_input/BioTransformer_sample_input.txt \
+--Association_result_path /sample_input/ssociationNetwork_sample_input.txt \
+--Molecular_network_edge_path /sample_input/MolecularNetwork_edge_sample_input.txt \
+--Molecular_network_node_path /sample_input/MolecularNetwork_node_sample_input.txt \
+--tolerance 0.02 \
+--substrate_rho_value_cutoff 0.1 \
+--product_rho_value_cutoff 0.1 \
+--neg_sub_pos_prod_only True \
 --output_path output.csv
 ```
 
