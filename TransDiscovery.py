@@ -11,10 +11,10 @@ def run(args):
     start_time = timer()
     TransDiscovery_step1.run(args)
     step_one_time = timer()
-    print('Finished merging association network with BioTransformer knowledgebase in {:.3f} seconds').format(step_one_time-timer)
+    print('Finished merging association network with BioTransformer knowledgebase in {:.3f} seconds'.format(step_one_time-start_time))
     TransDiscovery_step2.run(args)
     finish_time = timer()
-    print('Finished running TransDiscovery in {:.3f} seconds').format(finish_time-timer)
+    print('Finished running TransDiscovery in {:.3f} seconds'.format(finish_time-step_one_time))
 
 
 
@@ -41,9 +41,10 @@ if __name__ == "__main__":
     parser.add_argument("--neg_sub_pos_prod_only",
                         help="True if only consider negative correlation for substrate and positive correlation for product",
                         default=False)
+
     parser.add_argument("--Association_BioTransformer_merged_result",
                         help="The path to the input file contain merged Association network and BioTransformer result",
-                        default="/tmp/step_1.txt")
+                        default="tmp/step_1.txt")
     
     parser.add_argument("--Molecular_network_edge_path",
                         help="The path to the molecular netowrk edge info",
