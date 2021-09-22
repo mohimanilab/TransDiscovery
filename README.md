@@ -57,7 +57,7 @@ This step is designed to identify candidate biotransformations by matching the a
 This step is designed to validate candidate biotransformations identified in the previous step. In this step, the input files will be the candidate biotransformations obtained in the previous step and molecular network node/edge files generated from GNPS. If an edge/path in the molecular network between the substrate and the product exists, then the software will record such edge/path and consider this biotransformation as identified biotransformation. 
 
 ## Running the workflow
-The input parameters are:
+User can perform the TransDiscovery workflow with the following parameters:
 ```
 python TransDiscovery.py \
 --BioTransformer_result_path /sample_input/BioTransformer_sample_input.txt \
