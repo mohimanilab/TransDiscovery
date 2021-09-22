@@ -74,8 +74,8 @@ python TransDiscovery.py \
 Where: 
 * `--BioTransformer_result_path`: The path to the BioTransformer result folder
 * `--Association_result_path`: The path to the Association network result file
-* `--Molecular_network_edge`: The path to the molecular network edge info
-* `--Molecular_network_node`: The path to the molecular network node info
+* `--Molecular_network_edge_path`: The path to the molecular network edge info
+* `--Molecular_network_node_path`: The path to the molecular network node info
 * `--tolerance`: The mass tolerance when matching molecular features
 * `--substrate_rho_value_cutoff`: The rho value correlation cutoff for valid association between substrate and enzyme
 * `--product_rho_value_cutoff`: The rho value correlation cutoff for valid association between product and enzyme
