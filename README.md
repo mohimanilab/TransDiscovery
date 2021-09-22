@@ -68,7 +68,7 @@ python TransDiscovery.py \
 --substrate_rho_value_cutoff 0.1 \
 --product_rho_value_cutoff 0.1 \
 --neg_sub_pos_prod_only True \
---output_path output.csv
+--output_path output.txt
 ```
 
 Where: 
