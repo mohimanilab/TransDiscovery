@@ -1,6 +1,6 @@
 cluster index	AllFiles	sum(precursor intensity)	RTMean	RTStdErr	parent mass	ScanNumber	ProteosafeFilePath	Original_Path
-147	inputspectra/spec-02692.mzML	2033	130.286	0	113.964	690	spec/spec-02692.mzML	f.MSV000080673/ccms_peak/2017.AmericanGut3K.mzXMLfiles/Blanks_LCMSsolvent/blank_6_RA1_01_4937.mzML
-233	inputspectra/spec-00545.mzML	3008	53.193	0	120.08	240	spec/spec-00545.mzML	f.MSV000080673/ccms_peak/2017.AmericanGut3K.mzXMLfiles/Samples/000029600_RE3_01_4940.mzML
+147	inputspectra/spec-02692.mzML	2033	130.286	0	74.937	690	spec/spec-02692.mzML	f.MSV000080673/ccms_peak/2017.AmericanGut3K.mzXMLfiles/Blanks_LCMSsolvent/blank_6_RA1_01_4937.mzML
+233	inputspectra/spec-00545.mzML	3008	53.193	0	74.937	240	spec/spec-00545.mzML	f.MSV000080673/ccms_peak/2017.AmericanGut3K.mzXMLfiles/Samples/000029600_RE3_01_4940.mzML
 238	inputspectra/spec-01857.mzML	56766	32.573	0	121.064	103	spec/spec-01857.mzML	f.MSV000080673/ccms_peak/2017.AmericanGut3K.mzXMLfiles/Samples/000022399_RE4_01_4941.mzML
 335	inputspectra/spec-02434.mzML	4202	522.556	0	124.087	3275	spec/spec-02434.mzML	f.MSV000080673/ccms_peak/2017.AmericanGut3K.mzXMLfiles/Samples/000035430_RA11_01_5558.mzML
 370	inputspectra/spec-01515.mzML	365	45.183	0	127.075	195	spec/spec-01515.mzML	f.MSV000080673/ccms_peak/2017.AmericanGut3K.mzXMLfiles/Samples/000022397_RB1_01_4789.mzML
